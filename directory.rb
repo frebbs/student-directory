@@ -7,10 +7,12 @@ def input_students
     name = gets.chomp
     puts "Enter a hobby "
     hobby = gets.chomp
+    puts "Where were they born?"
+    cob = gets.chomp
     # repeat while name is empty
     while !name.empty? do
         #Add student has to the array
-        students << {name: name, cohort: :november, hobby: hobby}
+        students << {name: name, cohort: :november, hobby: hobby, cob: cob}
         puts "Now we have #{students.count} students"
         name = gets.chomp
         if name.empty?
@@ -18,6 +20,8 @@ def input_students
         end
         puts "Enter a hobby"
         hobby = gets.chomp
+        puts "Where were they born?"
+        cob = gets.chomp
     end
     # return the array
     students
@@ -31,7 +35,7 @@ end
 def print(students)
     x = 0
     while x < students.count do
-        puts "#{students[x][:name]}, Hobby: #{students[x][:hobby]} (#{students[x][:cohort]} cohort)"
+        puts "#{students[x][:name]}, Hobby: #{students[x][:hobby]}, Place of birth: #{students[x][:cob]} (#{students[x][:cohort]} cohort)"
         x = x + 1   
     end
 end
